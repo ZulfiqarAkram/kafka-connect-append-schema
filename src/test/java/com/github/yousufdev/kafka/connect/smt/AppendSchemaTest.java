@@ -1,25 +1,22 @@
 package com.github.yousufdev.kafka.connect.smt;
 
 import org.apache.kafka.connect.data.Schema;
-import org.apache.kafka.connect.data.SchemaBuilder;
-import org.apache.kafka.connect.data.Struct;
-import org.apache.kafka.connect.errors.DataException;
+import org.apache.kafka.connect.data.Struct;;
 import org.apache.kafka.connect.sink.SinkRecord;
-import org.apache.kafka.connect.source.SourceRecord;
-import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
 
 public class AppendSchemaTest {
 
     private AppendSchema<SinkRecord> xform = new AppendSchema.Value<>();
 
-    @After
+    @AfterEach
     public void tearDown() { xform.close(); }
 
 
